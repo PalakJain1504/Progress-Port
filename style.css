@@ -1,0 +1,44 @@
+*{
+    padding:0;
+    margin:0;
+    text-decoration:none;
+    list-style:none;
+    box-sizing:border-box;
+
+}
+
+body{
+    font-family:'Open sans', sans-serif;
+}
+
+nav{
+    background : #0082e6  ;
+    height:100px;
+    width:100%;
+}
+.nav-label{
+    color: white;
+    font-size: 20px;
+    
+    padding: 80px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 50px 30px;
+    display: inline-block;
+
+}
+.nav-list ul{
+    float:right;
+    margin-right: 20px;
+}
+.nav-list ul li{
+    display: inline-block;
+    
+    margin:0 5px;
+
+}
+.nav-list ul li a{
+    color:white;
+    font-size:17px;
+    text-transform: uppercase;
+}
