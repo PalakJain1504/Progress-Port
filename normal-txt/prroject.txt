@@ -1,28 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Progress Port</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="CSS-folder/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
- 
-</head>
-<body>
-    <nav>
-        <div class="logo-image">
-            <img src="images/logo.svg" alt="">
-        </div>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><button >Log Out</button></li>
-        </ul>
-    </nav>
-
-    <script type="text/javascript">
+<script type="text/javascript">
         $(document).ready(function($)
         {
             //ajax row data
@@ -308,12 +284,3 @@
         
           </div>
         </div>
-
-
-
-
-
-
-    <script src="script.js"></script>
-</body>
-</html>
