@@ -31,7 +31,7 @@ function app_db ()
 
     $db_conn = array(
         'host' => 'localhost', 
-        'database' => 'code_with_mark_v1', 
+        'database' => 'student_project_detail', 
         'user' => 'root',
         'pass' => '',        
     );

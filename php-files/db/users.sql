@@ -12,6 +12,11 @@ SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+Create database if not exists `student_project_detail`;
+use `student_project_detail`;
+DROP TABLE IF EXISTS users;
+
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -19,7 +24,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `code_with_mark_v1`
+-- Database: `student_project_detail`
 --
 
 -- --------------------------------------------------------
@@ -33,13 +38,13 @@ CREATE TABLE `users` (
   `row_id` text NOT NULL,
   `roll` text NOT NULL,
   `name` text NOT NULL,
-  `email` text NOT NULL
-  `phone` text NOT NULL
-  `title` text NOT NULL
-  `domain` text NOT NULL
-  `fmentor` text NOT NULL
-  `indmentor` text NOT NULL
-  `ppt` text NOT NULL
+  `email` text NOT NULL,
+  `phone` text NOT NULL,
+  `title` text NOT NULL,
+  `domain` text NOT NULL,
+  `fmentor` text NOT NULL,
+  `indmentor` text NOT NULL,
+  `ppt` text NOT NULL,
   `presentation` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -47,12 +52,11 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `row_id`, `fname`, `lname`, `email`) VALUES
-(1, 'ghjffdzdnbs', 'Code With', 'Mark', 'mark@codewithmark.com'),
-(2, '6dnbivsj1l5', 'May', 'Johson', 'mary@gmail.com'),
-(3, 'u0i4121mkd', 'John', 'Doe', 'john@yahoo.com'),
-(4, 'sz8br0v17s7', 'Julie', 'Smith', 'julie@gmail.com');
-
+INSERT INTO `users` (`id`, `row_id`, `roll`, `name`, `email`, `phone`, `title`, `domain`, `fmentor`, `indmentor`, `ppt`, `presentation`) VALUES 
+(1, 'ghjffdzdnbs', '101', 'Code With Mark', 'mark@codewithmark.com', '1234567890', 'Developer', 'Web', 'John Doe', 'Jane Doe', 'Yes', 'Final'),
+(2, '6dnbivsj1l5', '102', 'May Johnson', 'mary@gmail.com', '9876543210', 'Designer', 'Graphics', 'Alice', 'Bob', 'No', 'Pending'),
+(3, 'u0i4121mkd', '103', 'John Doe', 'john@yahoo.com', '1122334455', 'Engineer', 'Software', 'Eve', 'Charlie', 'Yes', 'Completed'),
+(4, 'sz8br0v17s7', '104', 'Julie Smith', 'julie@gmail.com', '6677889900', 'Manager', 'HR', 'Mike', 'Sara', 'No', 'Not Started');
 --
 -- Indexes for dumped tables
 --

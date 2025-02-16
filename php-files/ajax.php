@@ -22,7 +22,7 @@ if(isset($_POST['call_type']) && $_POST['call_type'] =="single_entry")
 	$col_name  	= app_db()->CleanDBData($_POST['col_name']); 
 	$col_val  	= app_db()->CleanDBData($_POST['col_val']);
 	
-	$tbl_col_name = array("fname", "lname", "email", "row_id");
+	$tbl_col_name = array("roll", "name", "email","phone","title","domain","fmentor","indmentor","ppt","presentation", "row_id");
 
 	if (!in_array($col_name, $tbl_col_name))
 	{
@@ -76,9 +76,16 @@ if(isset($_POST['call_type']) && $_POST['call_type'] =="row_entry")
 {	
 
 	$row_id 	= app_db()->CleanDBData($_POST['row_id']);
-	$fname  	= app_db()->CleanDBData($_POST['fname']); 
-	$lname  	= app_db()->CleanDBData($_POST['lname']); 
-	$email  	= app_db()->CleanDBData($_POST['email']); 	
+	$roll  	= app_db()->CleanDBData($_POST['roll']); 
+	$name  	= app_db()->CleanDBData($_POST['name']); 
+	$email  	= app_db()->CleanDBData($_POST['email']); 
+	$phone  	= app_db()->CleanDBData($_POST['phone']); 	
+	$title  	= app_db()->CleanDBData($_POST['title']); 	
+	$domain  	= app_db()->CleanDBData($_POST['domain']); 	
+	$fmentor 	= app_db()->CleanDBData($_POST['fmentor']); 	
+	$indmentor	= app_db()->CleanDBData($_POST['indmentor']); 	
+	$ppt  	= app_db()->CleanDBData($_POST['ppt']); 	
+	$presentation  	= app_db()->CleanDBData($_POST['presentation']); 		
 	
 	$q1 = app_db()->select("select * from users where row_id='$row_id'");
 	if($q1 < 1) 
@@ -97,9 +104,17 @@ if(isset($_POST['call_type']) && $_POST['call_type'] =="row_entry")
 		$strTableName = "users";
 
 		$array_fields = array(
-			'fname' => $fname,
-			'lname' => $lname,
+			'roll' => $roll,
+			'name' => $name,
 			'email' => $email,
+			'phone' => $phone,
+			'title' => $title,
+			'domain' => $domain,
+			'fmentor' => $fmentor,
+			'indmentor' => $indmentor,
+			'ppt' => $ppt,
+			'presentation' => $presentation,
+			
 		);
 		$array_where = array(    
 		  'row_id' => $row_id,
@@ -125,9 +140,16 @@ if(isset($_POST['call_type']) && $_POST['call_type'] =="new_row_entry")
 {	
 
 	$row_id 	= app_db()->CleanDBData($_POST['row_id']);
-	$fname  	= app_db()->CleanDBData($_POST['fname']); 
-	$lname  	= app_db()->CleanDBData($_POST['lname']); 
+	$roll  	= app_db()->CleanDBData($_POST['roll']); 
+	$name  	= app_db()->CleanDBData($_POST['name']); 
 	$email  	= app_db()->CleanDBData($_POST['email']); 	
+	$phone  	= app_db()->CleanDBData($_POST['phone']); 
+	$title  	= app_db()->CleanDBData($_POST['title']); 
+	$domain  	= app_db()->CleanDBData($_POST['domain']); 
+	$fmentor  	= app_db()->CleanDBData($_POST['fmentor']); 
+	$indmentor  	= app_db()->CleanDBData($_POST['indmentor']); 
+	$ppt  	= app_db()->CleanDBData($_POST['ppt']); 
+	$presentation  	= app_db()->CleanDBData($_POST['presentation']); 
 	
 	$q1 = app_db()->select("select * from users where row_id='$row_id'");
 	if($q1 < 1) 
@@ -138,9 +160,17 @@ if(isset($_POST['call_type']) && $_POST['call_type'] =="new_row_entry")
 		$insert_arrays = array
 		(
 			'row_id' => $row_id,
-			'fname' => $fname,
-			'lname' => $lname,
+			'roll' => $roll,
+			'name' => $name,
 			'email' => $email,
+			'phone' => $phone,
+			'title' => $title,
+			'domain' => $domain,
+			'fmentor' => $fmentor,
+			'indmentor' => $indmentor,
+			'ppt' => $ppt,
+			'presentation' => $presentation,
+
 		);
 
 		//Call it like this:
@@ -154,6 +184,14 @@ if(isset($_POST['call_type']) && $_POST['call_type'] =="new_row_entry")
 	}	 
 }
 //--->new row entry  > end
+
+
+
+
+
+
+
+
 
 
 

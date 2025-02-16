@@ -1,6 +1,37 @@
-<?php
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress Port</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="CSS-folder/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+ 
+</head>
+<body>
+    <nav>
+        <div class="logo-image">
+            <img src="images/logo.svg" alt="">
+        </div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><button >Log Out</button></li>
+        </ul>
+    </nav> -->
+
+    <?php
 	
 include_once dirname(__FILE__).'/inc/config.php'; 
+
+
+// Fetch all users when 'call_type' is 'get'
+if(isset($_GET['call_type']) && $_GET['call_type'] == "get") {
+    $q1 = app_db()->select('SELECT * FROM users');
+    echo json_encode($q1);
+}
  
 $q1 = app_db()->select('select * from users');
 
@@ -16,7 +47,7 @@ $(document).ready(function($)
 	{
 		//--->create data table > start
 		var tbl = '';
-		tbl +='<table class="table table-hover tbl_code_with_mark">'
+		tbl +='<table class="table table-hover tbl_project_details">'
 
 			//--->create table header > start
 			tbl +='<thead>';
@@ -30,7 +61,7 @@ $(document).ready(function($)
                     tbl +='<th>Faculty Mentor</th>';
                     tbl +='<th>Industry Mentor</th>';
                     tbl +='<th>Presentation</th>';
-                    tbl +='<th>Report</th>';;
+                    tbl +='<th>Report</th>';
 				tbl +='</tr>';
 			tbl +='</thead>';
 			//--->create table header > end
@@ -346,12 +377,20 @@ $(document).ready(function($)
 		var row_id = Math.random().toString(36).substr(2);
 
 		//get table rows
-		var tbl_row = $(document).find('.tbl_code_with_mark').find('tr');	 
+		var tbl_row = $(document).find('.tbl_project_details tbody').find('tr');	 
 		var tbl = '';
 		tbl +='<tr row_id="'+row_id+'">';
-			tbl +='<td ><div class="new_row_data fname bg-warning" contenteditable="true" edit_type="click" col_name="fname"></div></td>';
-			tbl +='<td ><div class="new_row_data lname bg-warning" contenteditable="true" edit_type="click" col_name="lname"></div></td>';
+			tbl +='<td ><div class="new_row_data roll bg-warning" contenteditable="true" edit_type="click" col_name="roll"></div></td>';
+			tbl +='<td ><div class="new_row_data name bg-warning" contenteditable="true" edit_type="click" col_name="name"></div></td>';
 			tbl +='<td ><div class="new_row_data email bg-warning" contenteditable="true" edit_type="click" col_name="email"></div></td>';
+			tbl +='<td ><div class="new_row_data phone bg-warning" contenteditable="true" edit_type="click" col_name="phone"></div></td>';
+			tbl +='<td ><div class="new_row_data title bg-warning" contenteditable="true" edit_type="click" col_name="title"></div></td>';
+			tbl +='<td ><div class="new_row_data domain bg-warning" contenteditable="true" edit_type="click" col_name="domain"></div></td>';
+			tbl +='<td ><div class="new_row_data fmentor bg-warning" contenteditable="true" edit_type="click" col_name="fmentor"></div></td>';
+			tbl +='<td ><div class="new_row_data indmentor bg-warning" contenteditable="true" edit_type="click" col_name="indmentor"></div></td>';
+			tbl +='<td ><div class="new_row_data ppt bg-warning" contenteditable="true" edit_type="click" col_name="ppt"></div></td>';
+			tbl +='<td ><div class="new_row_data presentation bg-warning" contenteditable="true" edit_type="click" col_name="presentation"></div></td>';
+
 
 			//--->edit options > start
 			tbl +='<td>';			 
@@ -363,7 +402,7 @@ $(document).ready(function($)
 		tbl +='</tr>';
 		tbl_row.last().after(tbl);
 
-		$(document).find('.tbl_code_with_mark').find('tr').last().find('.fname').focus();
+		$(document).find('.tbl_project_details').find('tr').last().find('.row_id').focus();
 	});
 
 	
@@ -549,7 +588,7 @@ $(document).ready(function($)
 <div style="padding:10px;"></div>
  
 <div class="container">
-	<h1 class="text-center">Easily Add, Edit, and Delete HTML Table Rows Or Cells With jQuery</h1>
+	<h1 class="text-center">Project</h1>
 
 	<div style="padding:20px;"></div>
 
@@ -578,3 +617,10 @@ $(document).ready(function($)
 	</div>
 </div>
 
+
+
+
+
+    <!-- <script src="script.js"></script>
+</body>
+</html> -->
